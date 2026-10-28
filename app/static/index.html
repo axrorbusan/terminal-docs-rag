@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terminal Docs RAG</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --panel: #ffffff; --text: #1d2330; --muted: #5d6676; --line: #dfe3ea;
+    --accent: #0b5cad; --accent-soft: #e6f0fb; --cite: #8a4b00; --cite-soft: #fff1dc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #12151b; --panel: #1b2029; --text: #e6e9ef; --muted: #9aa3b2; --line: #2c3340;
+            --accent: #6aaef5; --accent-soft: #1d2b3d; --cite: #ffc47a; --cite-soft: #3a2b16; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 15px/1.55 system-ui, -apple-system, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
+  main { max-width: 860px; margin: 0 auto; padding: 28px 16px 60px; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: var(--muted); margin: 0 0 20px; }
+  form { display: flex; gap: 8px; }
+  textarea { flex: 1; resize: vertical; min-height: 52px; padding: 12px; font: inherit; color: var(--text);
+             background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
+  button { padding: 0 18px; font: inherit; font-weight: 600; color: #fff; background: var(--accent);
+           border: 0; border-radius: 8px; cursor: pointer; }
+  button:disabled { opacity: .6; cursor: wait; }
+  .opts { display: flex; flex-wrap: wrap; gap: 14px; margin: 10px 0 6px; color: var(--muted); font-size: 13px; }
+  .examples { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 22px; }
+  .examples span { padding: 4px 10px; font-size: 13px; border: 1px solid var(--line); border-radius: 999px;
+                   background: var(--panel); cursor: pointer; }
+  .examples span:hover { border-color: var(--accent); }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; }
+  .answer { white-space: pre-wrap; }
+  .answer a { color: var(--cite); background: var(--cite-soft); border-radius: 4px; padding: 0 3px;
+              text-decoration: none; font-weight: 600; font-size: 12px; }
+  .meta { color: var(--muted); font-size: 12px; margin-top: 10px; }
+  .src { border-top: 1px solid var(--line); padding: 10px 0; }
+  .src:first-of-type { border-top: 0; }
+  .src h3 { margin: 0 0 4px; font-size: 14px; }
+  .src .tag { font-size: 11px; color: var(--accent); background: var(--accent-soft); padding: 1px 6px; border-radius: 4px; margin-left: 6px; }
+  .src pre { margin: 0; white-space: pre-wrap; font: 12px/1.45 ui-monospace, Menlo, Consolas, monospace;
+             color: var(--muted); max-height: 9em; overflow: auto; }
+  .src.hl { background: var(--cite-soft); border-radius: 6px; padding-left: 8px; }
+  .err { color: #c0392b; }
+  @media (max-width: 560px) { form { flex-direction: column; } button { padding: 12px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Terminal Docs RAG</h1>
+  <p class="sub">Ask about container-terminal EDI messages (BAPLIE, MOVINS, COPRAR, COARRI, CODECO, VERMAS …).
+     Answers come only from 19 SMDG guides and cite the page. Korean or English.</p>
+
+  <form id="f">
+    <textarea id="q" placeholder="e.g. Which segment carries the verified gross mass in VERMAS?"></textarea>
+    <button id="go">Ask</button>
+  </form>
+  <div class="opts">
+    <label>Search
+      <select id="mode"><option value="hybrid">hybrid (vector + BM25)</option>
+        <option value="dense">vector only</option><option value="sparse">BM25 only</option></select></label>
+    <label>Query rewrite
+      <select id="rw"><option value="auto">auto (non-English only)</option>
+        <option value="always">always</option><option value="fuse">fuse original + rewritten</option>
+        <option value="none">off</option></select></label>
+  </div>
+  <div class="examples" id="ex"></div>
+  <div id="out"></div>
+</main>
+<script>
+const EXAMPLES = [
+  "What is the CODECO message used for?",
+  "VERMAS에서 VGM은 어느 세그먼트에 들어가나요?",
+  "How should tiers be numbered on ships with 10 or more tiers on deck?",
+  "BAPLIE 3로 바꿔야 하는 이유는?",
+  "What does COARRI report?",
+];
+const $ = (id) => document.getElementById(id);
+const esc = (s) => s.replace(/[&<>"]/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+EXAMPLES.forEach((t) => { const s = document.createElement("span"); s.textContent = t;
+  s.onclick = () => { $("q").value = t; ask(); }; $("ex").appendChild(s); });
+
+async function ask(e) {
+  if (e) e.preventDefault();
+  const question = $("q").value.trim();
+  if (question.length < 3) return;
+  $("go").disabled = true; $("out").innerHTML = '<div class="card">Searching and answering…</div>';
+  try {
+    const r = await fetch("/ask", { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question, mode: $("mode").value, rewrite: $("rw").value }) });
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.detail || r.statusText);
+    const ans = esc(d.answer).replace(/\[(\d+)\]/g, '<a href="#s$1" data-n="$1">[$1]</a>');
+    const srcs = d.sources.map((s) => `<div class="src" id="s${s.n}"><h3>[${s.n}] ${esc(s.title)}, p.${s.page}
+      ${s.cited ? '<span class="tag">cited</span>' : ""}</h3><pre>${esc(s.text)}</pre></div>`).join("");
+    $("out").innerHTML = `<div class="card"><div class="answer">${ans}</div>
+      <div class="meta">search query: “${esc(d.search_query)}” · ${d.model} · ${d.seconds}s ·
+      ${d.input_tokens + d.output_tokens} tokens</div></div><div class="card">${srcs}</div>`;
+    document.querySelectorAll(".answer a").forEach((a) => a.onclick = () => {
+      document.querySelectorAll(".src").forEach((x) => x.classList.remove("hl"));
+      $("s" + a.dataset.n).classList.add("hl"); });
+  } catch (err) {
+    $("out").innerHTML = `<div class="card err">${esc(String(err.message || err))}</div>`;
+  } finally { $("go").disabled = false; }
+}
+$("f").onsubmit = ask;
+$("q").addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey) ask(e); });
+</script>
+</body>
+</html>

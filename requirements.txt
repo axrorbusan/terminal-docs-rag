@@ -1,0 +1,10 @@
+anthropic==2.3.0
+chromadb==1.5.9
+fastapi==0.162.0
+numpy==2.5.3
+onnxruntime==1.29.0
+pydantic==2.13.5
+pymupdf==2.0
+rank-bm25==0.2.2
+tokenizers==0.23.3
+uvicorn==0.54.0

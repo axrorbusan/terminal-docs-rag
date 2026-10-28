@@ -1,0 +1,10 @@
+services:
+  rag:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file: .env          # ANTHROPIC_API_KEY=...
+    volumes:
+      - ./data:/app/data       # PDFs in data/raw, index written to data/index
+      - ./models:/app/models   # all-MiniLM-L6-v2 ONNX model
+    restart: unless-stopped

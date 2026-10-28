@@ -1,0 +1,756 @@
+{
+ "k": 6,
+ "n": 29,
+ "table": {
+  "none/dense": {
+   "all": [
+    0.6896551724137931,
+    0.5317460317460317
+   ],
+   "en": [
+    0.9523809523809523,
+    0.7290249433106576
+   ],
+   "ko": [
+    0.0,
+    0.013888888888888888
+   ]
+  },
+  "none/sparse": {
+   "all": [
+    0.7931034482758621,
+    0.5298850574712644
+   ],
+   "en": [
+    0.9047619047619048,
+    0.6126984126984127
+   ],
+   "ko": [
+    0.5,
+    0.3125
+   ]
+  },
+  "none/hybrid": {
+   "all": [
+    0.7586206896551724,
+    0.5745210727969349
+   ],
+   "en": [
+    0.9523809523809523,
+    0.7285714285714286
+   ],
+   "ko": [
+    0.25,
+    0.1701388888888889
+   ]
+  },
+  "always/dense": {
+   "all": [
+    0.9655172413793104,
+    0.6888341543513957
+   ],
+   "en": [
+    0.9523809523809523,
+    0.7290249433106576
+   ],
+   "ko": [
+    1.0,
+    0.5833333333333334
+   ]
+  },
+  "always/sparse": {
+   "all": [
+    1.0,
+    0.735632183908046
+   ],
+   "en": [
+    1.0,
+    0.7698412698412699
+   ],
+   "ko": [
+    1.0,
+    0.6458333333333334
+   ]
+  },
+  "always/hybrid": {
+   "all": [
+    0.9655172413793104,
+    0.7222222222222222
+   ],
+   "en": [
+    0.9523809523809523,
+    0.7354497354497355
+   ],
+   "ko": [
+    1.0,
+    0.6875
+   ]
+  },
+  "auto/dense": {
+   "all": [
+    0.9655172413793104,
+    0.6888341543513957
+   ],
+   "en": [
+    0.9523809523809523,
+    0.7290249433106576
+   ],
+   "ko": [
+    1.0,
+    0.5833333333333334
+   ]
+  },
+  "auto/sparse": {
+   "all": [
+    0.9310344827586207,
+    0.6218390804597702
+   ],
+   "en": [
+    0.9047619047619048,
+    0.6126984126984127
+   ],
+   "ko": [
+    1.0,
+    0.6458333333333334
+   ]
+  },
+  "auto/hybrid": {
+   "all": [
+    0.9655172413793104,
+    0.7172413793103448
+   ],
+   "en": [
+    0.9523809523809523,
+    0.7285714285714286
+   ],
+   "ko": [
+    1.0,
+    0.6875
+   ]
+  },
+  "fuse/dense": {
+   "all": [
+    0.7586206896551724,
+    0.5528188286808976
+   ],
+   "en": [
+    0.9523809523809523,
+    0.7290249433106576
+   ],
+   "ko": [
+    0.25,
+    0.09027777777777778
+   ]
+  },
+  "fuse/sparse": {
+   "all": [
+    0.9655172413793104,
+    0.6229885057471264
+   ],
+   "en": [
+    1.0,
+    0.6841269841269841
+   ],
+   "ko": [
+    0.875,
+    0.4625
+   ]
+  },
+  "fuse/hybrid": {
+   "all": [
+    0.8620689655172413,
+    0.6409414340448824
+   ],
+   "en": [
+    0.9523809523809523,
+    0.7314814814814815
+   ],
+   "ko": [
+    0.625,
+    0.40327380952380953
+   ]
+  }
+ },
+ "rows": [
+  {
+   "id": "en01",
+   "lang": "en",
+   "rewritten": [
+    "What is the CODECO message used for?",
+    "CODECO"
+   ],
+   "none/dense": 1,
+   "none/sparse": 1,
+   "none/hybrid": 1,
+   "always/dense": 1,
+   "always/sparse": 1,
+   "always/hybrid": 1,
+   "auto/dense": 1,
+   "auto/sparse": 1,
+   "auto/hybrid": 1,
+   "fuse/dense": 1,
+   "fuse/sparse": 1,
+   "fuse/hybrid": 1
+  },
+  {
+   "id": "en02",
+   "lang": "en",
+   "rewritten": [
+    "What does a COARRI message report?",
+    "COARRI"
+   ],
+   "none/dense": 1,
+   "none/sparse": 3,
+   "none/hybrid": 1,
+   "always/dense": 1,
+   "always/sparse": 3,
+   "always/hybrid": 2,
+   "auto/dense": 1,
+   "auto/sparse": 3,
+   "auto/hybrid": 1,
+   "fuse/dense": 1,
+   "fuse/sparse": 3,
+   "fuse/hybrid": 2
+  },
+  {
+   "id": "en03",
+   "lang": "en",
+   "rewritten": [
+    "Who normally sends the COPRAR message and what does it instruct the terminal to do?",
+    "COPRAR"
+   ],
+   "none/dense": 1,
+   "none/sparse": 8,
+   "none/hybrid": 1,
+   "always/dense": 1,
+   "always/sparse": 3,
+   "always/hybrid": 1,
+   "auto/dense": 1,
+   "auto/sparse": 8,
+   "auto/hybrid": 1,
+   "fuse/dense": 1,
+   "fuse/sparse": 5,
+   "fuse/hybrid": 1
+  },
+  {
+   "id": "en04",
+   "lang": "en",
+   "rewritten": [
+    "What is the purpose of the COPINO message?",
+    "COPINO"
+   ],
+   "none/dense": 1,
+   "none/sparse": 1,
+   "none/hybrid": 1,
+   "always/dense": 1,
+   "always/sparse": 1,
+   "always/hybrid": 1,
+   "auto/dense": 1,
+   "auto/sparse": 1,
+   "auto/hybrid": 1,
+   "fuse/dense": 1,
+   "fuse/sparse": 1,
+   "fuse/hybrid": 1
+  },
+  {
+   "id": "en05",
+   "lang": "en",
+   "rewritten": [
+    "In a CODECO, which BGM document name codes identify a gate-in report and a gate-out report?",
+    "CODECO, BGM"
+   ],
+   "none/dense": 1,
+   "none/sparse": 1,
+   "none/hybrid": 1,
+   "always/dense": 1,
+   "always/sparse": 1,
+   "always/hybrid": 1,
+   "auto/dense": 1,
+   "auto/sparse": 1,
+   "auto/hybrid": 1,
+   "fuse/dense": 1,
+   "fuse/sparse": 1,
+   "fuse/hybrid": 1
+  },
+  {
+   "id": "en06",
+   "lang": "en",
+   "rewritten": [
+    "In CODECO, which full/empty indicator codes mean empty and full?",
+    "CODECO"
+   ],
+   "none/dense": 7,
+   "none/sparse": 3,
+   "none/hybrid": 3,
+   "always/dense": 7,
+   "always/sparse": 1,
+   "always/hybrid": 2,
+   "auto/dense": 7,
+   "auto/sparse": 3,
+   "auto/hybrid": 3,
+   "fuse/dense": 7,
+   "fuse/sparse": 2,
+   "fuse/hybrid": 3
+  },
+  {
+   "id": "en07",
+   "lang": "en",
+   "rewritten": [
+    "In BAPLIE 3, how must the stowage location of a container on a container vessel be transmitted?",
+    "BAPLIE"
+   ],
+   "none/dense": 1,
+   "none/sparse": 2,
+   "none/hybrid": 5,
+   "always/dense": 1,
+   "always/sparse": 3,
+   "always/hybrid": 3,
+   "auto/dense": 1,
+   "auto/sparse": 2,
+   "auto/hybrid": 5,
+   "fuse/dense": 1,
+   "fuse/sparse": 2,
+   "fuse/hybrid": 4
+  },
+  {
+   "id": "en08",
+   "lang": "en",
+   "rewritten": [
+    "How should on-deck tiers be numbered for vessels that can carry 10 or more tiers on deck?",
+    "on-deck tiers, tier numbering"
+   ],
+   "none/dense": 1,
+   "none/sparse": 2,
+   "none/hybrid": 2,
+   "always/dense": 1,
+   "always/sparse": 1,
+   "always/hybrid": 1,
+   "auto/dense": 1,
+   "auto/sparse": 2,
+   "auto/hybrid": 2,
+   "fuse/dense": 1,
+   "fuse/sparse": 2,
+   "fuse/hybrid": 1
+  },
+  {
+   "id": "en09",
+   "lang": "en",
+   "rewritten": [
+    "A container is marked only with digits and no letter prefix. How should its ID be sent in EDI?",
+    "container ID, EDI"
+   ],
+   "none/dense": 1,
+   "none/sparse": 1,
+   "none/hybrid": 1,
+   "always/dense": 1,
+   "always/sparse": 1,
+   "always/hybrid": 1,
+   "auto/dense": 1,
+   "auto/sparse": 1,
+   "auto/hybrid": 1,
+   "fuse/dense": 1,
+   "fuse/sparse": 1,
+   "fuse/hybrid": 1
+  },
+  {
+   "id": "en10",
+   "lang": "en",
+   "rewritten": [
+    "Which message should a shipping line use to release full import containers, and which one for export bookings and empty container release?",
+    ""
+   ],
+   "none/dense": 1,
+   "none/sparse": 1,
+   "none/hybrid": 1,
+   "always/dense": 1,
+   "always/sparse": 1,
+   "always/hybrid": 1,
+   "auto/dense": 1,
+   "auto/sparse": 1,
+   "auto/hybrid": 1,
+   "fuse/dense": 1,
+   "fuse/sparse": 1,
+   "fuse/hybrid": 1
+  },
+  {
+   "id": "en11",
+   "lang": "en",
+   "rewritten": [
+    "How should an empty tank container that still has dangerous goods residue be reported in EDI?",
+    "empty tank container, dangerous goods residue, EDI"
+   ],
+   "none/dense": 1,
+   "none/sparse": 1,
+   "none/hybrid": 1,
+   "always/dense": 1,
+   "always/sparse": 1,
+   "always/hybrid": 1,
+   "auto/dense": 1,
+   "auto/sparse": 1,
+   "auto/hybrid": 1,
+   "fuse/dense": 1,
+   "fuse/sparse": 1,
+   "fuse/hybrid": 1
+  },
+  {
+   "id": "en12",
+   "lang": "en",
+   "rewritten": [
+    "In VERMAS, which segment carries the verified gross mass, and what does it look like?",
+    "VERMAS, VGM, verified gross mass"
+   ],
+   "none/dense": 2,
+   "none/sparse": 5,
+   "none/hybrid": 2,
+   "always/dense": 2,
+   "always/sparse": 1,
+   "always/hybrid": 1,
+   "auto/dense": 2,
+   "auto/sparse": 5,
+   "auto/hybrid": 2,
+   "fuse/dense": 2,
+   "fuse/sparse": 1,
+   "fuse/hybrid": 2
+  },
+  {
+   "id": "en13",
+   "lang": "en",
+   "rewritten": [
+    "Which VERMAS DOC codes refer to SOLAS VGM verification method 1 and method 2?",
+    "VERMAS, DOC, SOLAS, VGM, verification method"
+   ],
+   "none/dense": 1,
+   "none/sparse": 1,
+   "none/hybrid": 1,
+   "always/dense": 1,
+   "always/sparse": 1,
+   "always/hybrid": 1,
+   "auto/dense": 1,
+   "auto/sparse": 1,
+   "auto/hybrid": 1,
+   "fuse/dense": 1,
+   "fuse/sparse": 1,
+   "fuse/hybrid": 1
+  },
+  {
+   "id": "en14",
+   "lang": "en",
+   "rewritten": [
+    "Can the VERMAS message be used to report empty containers?",
+    "VERMAS"
+   ],
+   "none/dense": 1,
+   "none/sparse": 1,
+   "none/hybrid": 1,
+   "always/dense": 1,
+   "always/sparse": 1,
+   "always/hybrid": 1,
+   "auto/dense": 1,
+   "auto/sparse": 1,
+   "auto/hybrid": 1,
+   "fuse/dense": 1,
+   "fuse/sparse": 1,
+   "fuse/hybrid": 1
+  },
+  {
+   "id": "en15",
+   "lang": "en",
+   "rewritten": [
+    "In a TPFREP, how many moves should be reported for a container restow via the quay?",
+    "TPFREP"
+   ],
+   "none/dense": 3,
+   "none/sparse": 2,
+   "none/hybrid": 3,
+   "always/dense": 3,
+   "always/sparse": 2,
+   "always/hybrid": 3,
+   "auto/dense": 3,
+   "auto/sparse": 2,
+   "auto/hybrid": 3,
+   "fuse/dense": 3,
+   "fuse/sparse": 2,
+   "fuse/hybrid": 3
+  },
+  {
+   "id": "en16",
+   "lang": "en",
+   "rewritten": [
+    "What is the TPFREP message for, and who sends it to whom?",
+    "TPFREP"
+   ],
+   "none/dense": 4,
+   "none/sparse": 8,
+   "none/hybrid": 1,
+   "always/dense": 4,
+   "always/sparse": 1,
+   "always/hybrid": 2,
+   "auto/dense": 4,
+   "auto/sparse": 8,
+   "auto/hybrid": 1,
+   "fuse/dense": 4,
+   "fuse/sparse": 2,
+   "fuse/hybrid": 1
+  },
+  {
+   "id": "en17",
+   "lang": "en",
+   "rewritten": [
+    "How long before vessel arrival should the carrier send the COPRAR load and the COPRAR discharge?",
+    "COPRAR"
+   ],
+   "none/dense": 6,
+   "none/sparse": 1,
+   "none/hybrid": 3,
+   "always/dense": 6,
+   "always/sparse": 1,
+   "always/hybrid": 3,
+   "auto/dense": 6,
+   "auto/sparse": 1,
+   "auto/hybrid": 3,
+   "fuse/dense": 6,
+   "fuse/sparse": 1,
+   "fuse/hybrid": 3
+  },
+  {
+   "id": "en18",
+   "lang": "en",
+   "rewritten": [
+    "What is the maximum number of stowage locations a BAPLIE 3 message can transmit?",
+    "BAPLIE"
+   ],
+   "none/dense": 3,
+   "none/sparse": 6,
+   "none/hybrid": 10,
+   "always/dense": 3,
+   "always/sparse": 6,
+   "always/hybrid": 9,
+   "auto/dense": 3,
+   "auto/sparse": 6,
+   "auto/hybrid": 10,
+   "fuse/dense": 3,
+   "fuse/sparse": 6,
+   "fuse/hybrid": 9
+  },
+  {
+   "id": "en19",
+   "lang": "en",
+   "rewritten": [
+    "What is MOVINS used for and how does it relate to BAPLIE?",
+    "MOVINS, BAPLIE"
+   ],
+   "none/dense": 1,
+   "none/sparse": 4,
+   "none/hybrid": 1,
+   "always/dense": 1,
+   "always/sparse": 2,
+   "always/hybrid": 1,
+   "auto/dense": 1,
+   "auto/sparse": 4,
+   "auto/hybrid": 1,
+   "fuse/dense": 1,
+   "fuse/sparse": 3,
+   "fuse/hybrid": 1
+  },
+  {
+   "id": "en20",
+   "lang": "en",
+   "rewritten": [
+    "What is the DESTIM message used for?",
+    "DESTIM"
+   ],
+   "none/dense": 4,
+   "none/sparse": 2,
+   "none/hybrid": 2,
+   "always/dense": 4,
+   "always/sparse": 2,
+   "always/hybrid": 3,
+   "auto/dense": 4,
+   "auto/sparse": 2,
+   "auto/hybrid": 2,
+   "fuse/dense": 4,
+   "fuse/sparse": 2,
+   "fuse/hybrid": 2
+  },
+  {
+   "id": "en21",
+   "lang": "en",
+   "rewritten": [
+    "Which code list responsible agency code (data element 3055) is used to identify a vessel by its IMO (Lloyd's) number?",
+    "3055"
+   ],
+   "none/dense": 3,
+   "none/sparse": 3,
+   "none/hybrid": 2,
+   "always/dense": 3,
+   "always/sparse": 2,
+   "always/hybrid": 2,
+   "auto/dense": 3,
+   "auto/sparse": 3,
+   "auto/hybrid": 2,
+   "fuse/dense": 3,
+   "fuse/sparse": 3,
+   "fuse/hybrid": 2
+  },
+  {
+   "id": "ko01",
+   "lang": "ko",
+   "rewritten": [
+    "In VERMAS, which segment is used to send the VGM (verified gross mass)?",
+    "VERMAS, VGM"
+   ],
+   "none/dense": null,
+   "none/sparse": 1,
+   "none/hybrid": 9,
+   "always/dense": 4,
+   "always/sparse": 6,
+   "always/hybrid": 4,
+   "auto/dense": 4,
+   "auto/sparse": 6,
+   "auto/hybrid": 4,
+   "fuse/dense": null,
+   "fuse/sparse": 4,
+   "fuse/hybrid": null
+  },
+  {
+   "id": "ko02",
+   "lang": "ko",
+   "rewritten": [
+    "How are tier numbers assigned to vessels with more than 10 tiers of containers on deck?",
+    "tier"
+   ],
+   "none/dense": null,
+   "none/sparse": null,
+   "none/hybrid": null,
+   "always/dense": 1,
+   "always/sparse": 2,
+   "always/hybrid": 2,
+   "auto/dense": 1,
+   "auto/sparse": 2,
+   "auto/hybrid": 2,
+   "fuse/dense": 3,
+   "fuse/sparse": 1,
+   "fuse/hybrid": 3
+  },
+  {
+   "id": "ko03",
+   "lang": "ko",
+   "rewritten": [
+    "Why does BAPLIE need to be changed to version 3?",
+    "BAPLIE"
+   ],
+   "none/dense": null,
+   "none/sparse": null,
+   "none/hybrid": null,
+   "always/dense": 4,
+   "always/sparse": 1,
+   "always/hybrid": 1,
+   "auto/dense": 4,
+   "auto/sparse": 1,
+   "auto/hybrid": 1,
+   "fuse/dense": null,
+   "fuse/sparse": 4,
+   "fuse/hybrid": null
+  },
+  {
+   "id": "ko04",
+   "lang": "ko",
+   "rewritten": [
+    "What does the CODECO message report?",
+    "CODECO"
+   ],
+   "none/dense": 9,
+   "none/sparse": 3,
+   "none/hybrid": 1,
+   "always/dense": 1,
+   "always/sparse": 3,
+   "always/hybrid": 2,
+   "auto/dense": 1,
+   "auto/sparse": 3,
+   "auto/hybrid": 2,
+   "fuse/dense": 6,
+   "fuse/sparse": 2,
+   "fuse/hybrid": 1
+  },
+  {
+   "id": "ko05",
+   "lang": "ko",
+   "rewritten": [
+    "Which message should be used for the release approval of a full import container (laden import container)?",
+    "full import container, release approval"
+   ],
+   "none/dense": null,
+   "none/sparse": 6,
+   "none/hybrid": null,
+   "always/dense": 2,
+   "always/sparse": 1,
+   "always/hybrid": 1,
+   "auto/dense": 2,
+   "auto/sparse": 1,
+   "auto/hybrid": 1,
+   "fuse/dense": null,
+   "fuse/sparse": 2,
+   "fuse/hybrid": 1
+  },
+  {
+   "id": "ko06",
+   "lang": "ko",
+   "rewritten": [
+    "How many moves are hatch cover operations reported as in TPFREP?",
+    "TPFREP"
+   ],
+   "none/dense": null,
+   "none/sparse": null,
+   "none/hybrid": null,
+   "always/dense": 3,
+   "always/sparse": 6,
+   "always/hybrid": 4,
+   "auto/dense": 3,
+   "auto/sparse": 6,
+   "auto/hybrid": 4,
+   "fuse/dense": 9,
+   "fuse/sparse": null,
+   "fuse/hybrid": 7
+  },
+  {
+   "id": "ko07",
+   "lang": "ko",
+   "rewritten": [
+    "How should a container number that consists only of digits be transmitted via EDI?",
+    "container number, EDI"
+   ],
+   "none/dense": null,
+   "none/sparse": null,
+   "none/hybrid": null,
+   "always/dense": 1,
+   "always/sparse": 1,
+   "always/hybrid": 1,
+   "auto/dense": 1,
+   "auto/sparse": 1,
+   "auto/hybrid": 1,
+   "fuse/dense": 9,
+   "fuse/sparse": 5,
+   "fuse/hybrid": 4
+  },
+  {
+   "id": "ko08",
+   "lang": "ko",
+   "rewritten": [
+    "How many hours before vessel arrival should the COPRAR load instruction be sent, as recommended?",
+    "COPRAR"
+   ],
+   "none/dense": null,
+   "none/sparse": 1,
+   "none/hybrid": 4,
+   "always/dense": 3,
+   "always/sparse": 1,
+   "always/hybrid": 1,
+   "auto/dense": 3,
+   "auto/sparse": 1,
+   "auto/hybrid": 1,
+   "fuse/dense": null,
+   "fuse/sparse": 1,
+   "fuse/hybrid": 2
+  }
+ ]
+}
